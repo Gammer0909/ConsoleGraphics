@@ -1,4 +1,8 @@
-
+/*
+To use the ConsoleGraphics and ConsoleGame Namespaces, include these tags at the top of your program:
+using ConsoleGraphics;
+using ConsoleGraphics.ConsoleGame;
+*/
 namespace ConsoleGraphics
 {
     namespace ConsoleGame
@@ -36,7 +40,7 @@ namespace ConsoleGraphics
         public static string topBorder = "═";
         public static string sideBorder = "║";
         public static string endSideBorder = "║\n";
-        public static string filler = "#";
+        public static string filler = "#";              
         public static string topLeftCorner = "╔";
         public static string topRightCorner = "╗";
         public static string bottomLeftCorner = "╚";
@@ -45,15 +49,15 @@ namespace ConsoleGraphics
     }
     
 
-    class Title : Draw
+    class Title : Draw //extends Draw Class
     {
         
         
         public static void SingleTitle(string titleText)
         {
-            int width = titleText.Length + 2;
+            int width = titleText.Length + 2; //set Width to the length of the inputed text + 2
             Console.Write(topLeftCorner);
-            for (int i = 1; i <= width; i++)
+            for (int i = 1; i <= width; i++) //print topBorder until i is equal to width
             {
                 
                 Console.Write(topBorder);
@@ -62,11 +66,11 @@ namespace ConsoleGraphics
             Console.Write(topRightCorner + "\n");
             Console.Write(sideBorder);
             Console.Write(" ");
-            Console.Write(titleText);
+            Console.Write(titleText);  //print the titleText, with a space before and after, as well as borders
             Console.Write(" ");
             Console.WriteLine(sideBorder);
             Console.Write(bottomLeftCorner);
-            for (int i = 1; i <= width; i++)
+            for (int i = 1; i <= width; i++) //print topBorder until i is equal to width
             {
                 
                 Console.Write(topBorder);
