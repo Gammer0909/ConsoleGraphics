@@ -4,8 +4,9 @@
   
   Current Planned Features are-
   1. Ability to make squares ✅
-  2. Ability To make Single-Width Titles ✅
+  2. Ability to make Single-Width Titles ✅
   3. Ability to make custom size Titles
+  4. Ability to make simple animations
   
   
  # ConsoleGame
@@ -14,8 +15,8 @@
  
  Current planned Features are-
   1. To simplify making Y/N statements ✅
-  2. Ability to make moving characters for Console Games
-  3. Handling movement for advanced 2D Console Games
+  2. Ability to make games through animations
+  3. Ability to handle input for games
   
   
   
