@@ -53,7 +53,7 @@ namespace ConsoleGraphics
     {
         
         
-        public static void SingleTitle(string titleText)
+        public static void RenderSingleTitle(string titleText)
         {
             int width = titleText.Length + 2; //set Width to the length of the inputed text + 2
             Console.Write(topLeftCorner);
