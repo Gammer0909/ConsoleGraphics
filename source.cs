@@ -1,8 +1,11 @@
-/*
-To use the ConsoleGraphics and ConsoleGame Namespaces, include these tags at the top of your program:
+using System;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Collections.Generic;
 using ConsoleGraphics;
 using ConsoleGraphics.ConsoleGame;
-*/
+
 namespace ConsoleGraphics
 {
     namespace ConsoleGame
@@ -40,43 +43,134 @@ namespace ConsoleGraphics
         public static string topBorder = "═";
         public static string sideBorder = "║";
         public static string endSideBorder = "║\n";
-        public static string filler = "#";              
+        public static string filler = "#";
         public static string topLeftCorner = "╔";
-        public static string topRightCorner = "╗";
+        public static string topRightCorner = "╗\n";
         public static string bottomLeftCorner = "╚";
-        public static string bottomRightCorner = "╝";
+        public static string bottomRightCorner = "╝\n";
         
     }
     
+    class Point : Draw
+    {
+        
+        public int x = 0;
+        public int y = 0;
+        public char changePointTo = 'P';
+        
+        public Point(int _x, int _y, char point)
+        {
+            x = _x;
+            y = _y;
+            changePointTo = point;
+            
+        }
+        public Point(int _x, int _y)
+        {
+            x = _x;
+            y = _y;
+            
+        }
+    }
+    
+    class Animation : Draw
+    {
+        string[][] frameArray = new string[5][];
+        
+        
+        public Animation()
+        {
+            frameArray[0] = new string[] {topLeftCorner, topBorder, topBorder, topBorder, topRightCorner};
+            frameArray[1] = new string[] {sideBorder, filler, filler, filler, endSideBorder};
+            frameArray[2] = new string[] {sideBorder, filler, filler, filler, endSideBorder};
+            frameArray[3] = new string[] {sideBorder, filler, filler, filler, endSideBorder};
+            frameArray[4] = new string[] {bottomLeftCorner, topBorder, topBorder, topBorder, bottomRightCorner};
+            
+        }
+        
+        public void ClearFrame()
+        {
+            
+            Console.Clear();
+            
+        }
+        
+        public void Wait(int time)
+        {
+            
+            Thread.Sleep(time);
+            
+        }
+        
+        public void SetPoint(Point point)
+        {
+            int x = point.x;
+            int y = point.y;
+            string changeToThisPixel = Convert.ToString(point.changePointTo);
+            frameArray[y][x] = changeToThisPixel;
+            
+            
+        }
+        
+        public void ResetPoint(Point point)
+        {
+            
+            if(point.x >= 0 && point.y >= 0)
+            {
+             
+                frameArray[point.y][point.x] = filler;
+                
+            }
+            
+        }
+        
+        public void DrawFrame()
+        {
+            
+            foreach(string[] row in frameArray)
+            {
+                
+                foreach(string pixel in row)
+                {
+                    
+                    Console.Write(pixel);
+                    
+                }
+                
+            }
+            
+        }
+    }
+    
 
-    class Title : Draw //extends Draw Class
+    class Title : Draw
     {
         
         
         public static void RenderSingleTitle(string titleText)
         {
-            int width = titleText.Length + 2; //set Width to the length of the inputed text + 2
+            int width = titleText.Length + 2;
             Console.Write(topLeftCorner);
-            for (int i = 1; i <= width; i++) //print topBorder until i is equal to width
+            for (int i = 1; i <= width; i++)
             {
                 
                 Console.Write(topBorder);
                 
             }
-            Console.Write(topRightCorner + "\n");
+            Console.Write(topRightCorner);
             Console.Write(sideBorder);
             Console.Write(" ");
-            Console.Write(titleText);  //print the titleText, with a space before and after, as well as borders
+            Console.Write(titleText);
             Console.Write(" ");
             Console.WriteLine(sideBorder);
             Console.Write(bottomLeftCorner);
-            for (int i = 1; i <= width; i++) //print topBorder until i is equal to width
+            for (int i = 1; i <= width; i++)
             {
                 
                 Console.Write(topBorder);
                 
             }
-            Console.Write(bottomRightCorner + "\n");
+            Console.Write(bottomRightCorner);
             
         }
         
@@ -96,7 +190,7 @@ namespace ConsoleGraphics
                     
                 
             }
-            Console.Write(topRightCorner + "\n");
+            Console.Write(topRightCorner);
             for (int i = 1; i <= highthCounter; i++)
             {
                 
