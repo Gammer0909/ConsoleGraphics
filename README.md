@@ -23,10 +23,10 @@
  # Quickstart
   Currently there are no .dlls for downloading, so simply copy + paste the namespaces into your code. 
    
-  If you wish to use the namespaces in another file, use this: https://www.learnhowtoprogram.com/c-and-net/objects-and-methods/namespaces-and-file-structure
+  If you wish to use the namespaces in another file, use this: [Namespaces](https://www.learnhowtoprogram.com/c-and-net/objects-and-methods/namespaces-and-file-structure)
    
    
-  Thank you for choosing ConsoleGraphics!
+
 
 
 
