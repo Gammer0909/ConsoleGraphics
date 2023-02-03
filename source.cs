@@ -1,9 +1,9 @@
 using System;
 using System.Linq;
 using System.Text;
-using System.Threading;
+using System.Threading;  //System.Threading is required for Animation.Wait()
 using System.Collections.Generic;
-using ConsoleGraphics;
+using ConsoleGraphics;             //use these to reference the namespaces
 using ConsoleGraphics.ConsoleGame;
 
 namespace ConsoleGraphics
