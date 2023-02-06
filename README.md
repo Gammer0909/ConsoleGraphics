@@ -1,11 +1,11 @@
 # ConsoleGraphics
 
-  ConsoleGraphics is a Simple Graphics library to make Titles and squares.
+  ConsoleGraphics is a Simple Graphics library, with the following features:
   
   Current Planned Features are-
   1. Ability to make squares ✅
   2. Ability to make Single-Width Titles ✅
-  3. Ability to make custom size Titles
+  3. Ability to make custom size or multi-line Titles
   4. Ability to make simple animations ✅
   5. Ability to make custom frame sizes for animations
   
