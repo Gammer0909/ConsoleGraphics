@@ -1,9 +1,9 @@
 using System;
 using System.Linq;
 using System.Text;
-using System.Threading;  //System.Threading is required for Animation.Wait()
+using System.Threading; //use this to use Animation.Wait()
 using System.Collections.Generic;
-using ConsoleGraphics;             //use these to reference the namespaces
+using ConsoleGraphics;             //use these to reference ConsoleGraphics
 using ConsoleGraphics.ConsoleGame;
 
 namespace ConsoleGraphics
@@ -56,7 +56,7 @@ namespace ConsoleGraphics
         
         public int x = 0;
         public int y = 0;
-        public char changePointTo = 'P';
+        public char changePointTo = '#';
         
         public Point(int _x, int _y, char point)
         {
@@ -145,7 +145,74 @@ namespace ConsoleGraphics
 
     class Title : Draw
     {
-        
+        public static void RenderMultiTitle(int hight, int coordForText, string titleText, bool useFillerOrSpace)
+        {
+            
+            int width = titleText.Length + 2;
+            Console.Write(topLeftCorner);
+            for (int i = 1; i <= width; i++)
+            {
+                
+                Console.Write(topBorder);
+                
+            }
+            Console.Write(topRightCorner);
+            for (int i = 1; i <= hight; i++)
+            {
+                
+                Console.Write(sideBorder);
+                if (i != coordForText)
+                {
+                    
+                    for (int j = 1; j <= width; j++)
+                    {
+                        
+                        if (useFillerOrSpace)
+                        {
+                            
+                            Console.Write(filler);
+                            
+                        } else
+                        {
+                            
+                            Console.Write(" ");
+                            
+                        }
+                        
+                    }
+                    Console.Write(endSideBorder);
+                } else
+                {
+                    
+                    if (useFillerOrSpace)
+                    {
+                        
+                        Console.Write(filler);
+                        Console.Write(titleText);
+                        Console.Write(filler);
+                        Console.Write(endSideBorder);
+                        
+                    } else
+                    {
+                        
+                        Console.Write(" ");
+                        Console.Write(titleText);
+                        Console.Write(" ");
+                        Console.Write(endSideBorder);
+                        
+                    }
+                    
+                }
+            }
+            Console.Write(bottomLeftCorner);
+            for (int i = 1; i <= width; i++)
+            {
+                
+                Console.Write(topBorder);
+                
+            }
+            Console.Write(bottomRightCorner);
+        }
         
         public static void RenderSingleTitle(string titleText)
         {
@@ -228,3 +295,4 @@ namespace ConsoleGraphics
     
     
 }
+
